@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>addEdu</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link href="../css/reset.css" rel="stylesheet">
+    <!-- Bootstrap3.3.5 CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="../static/css/login.css" rel="stylesheet">
+    <link href="../static/css/queryResult.css" rel="stylesheet">
+    <link href="../static/css/addEdu.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="queryResule">
+        <h2>添加高等教育学历信息</h2>
+        <div class="back">
+            <a href="/index">返回首页</a>
+        </div>
+        <form action="/addEdu" method="post" name="addForm" >
+          <div class="top">
+              <div class="left">
+                  <p>
+                      <span>姓名：</span>
+                      <span>
+                        <input type="text" name="name" class="input_text" style="width: 230px; height: 45px" onfocus="if(this.placeholder=='姓名'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='姓名';this.className ='input_text'}"  type="text" placeholder="姓名" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span> 籍贯：</span>
+                        <select  id="select1" name ="place"  class="input_text"  style="background: #FFFFFF;width: 230px; height: 45px" onfocus="this.className ='input_text input_text_focus'">
+                            <option value="北京"  selected hidden>籍贯</option>
+                            <option value="北京">北京</option>
+                            <option value="上海">上海</option>
+                            <option value="河南">河南</option>
+                            <option value="河北">河北</option>
+                            <option value="江苏">江苏</option>
+                            <option value="浙江">浙江</option>
+                            <option value="">...</option>
+                       </select>
+                  </p>
+                  <p>
+                      <span>民族：</span>
+                          <select name ="nation"  class="input_text"  style="background: #FFFFFF;width: 230px; height: 45px" onfocus="this.className ='input_text input_text_focus'" >
+                              <option value="汉族" selected hidden>民族</option>
+                              <option value="汉族" >汉族</option>
+                              <option value="回族" >回族</option>
+                              <option value="土家族" >土家族</option>
+                              <option value="朝鲜族" >朝鲜族</option>
+                              <option value="维吾尔族">维吾尔族</option>
+                              <option value="">...</option>
+                          </select>
+                      </p>
+                  <p>
+                      <span>入学日期：</span>
+                      <span>
+                        <input id="todayTime" type="date" name="enrollDate" class="input_text" value="" style="width: 230px; height: 45px" onfocus="if(this.placeholder=='入学日期'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='入学日期';this.className ='input_text'}"  type="text" placeholder="入学日期" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span>学校名称：</span>
+                      <select name ="schoolName"  class="input_text" style="background: #FFFFFF;width: 230px; height: 45px" onfocus="this.className ='input_text input_text_focus'" >
+                          <optgroup label="北京">
+                              <option value="北京" selected hidden>学校名称</option>
+                              <option value="北京大学">北京大学</option>
+                              <option value="清华大学">清华大学</option>
+                              <option value="北京石油化工学院">北京石油化工学院</option>
+                              <option value="">...</option>
+                          </optgroup>
+                          <optgroup label="上海">
+                              <option value="上海复旦大学">上海复旦大学</option>
+                              <option value="上海交通大学">上海交通大学</option>
+                              <option value="上海师范大学">上海师范大学</option>
+                              <option value="">...</option>
+                          </optgroup>
+                          <optgroup label="河南">
+                              <option value="郑州大学">郑州大学</option>
+                              <option value="河南大学">河南大学</option>
+                              <option value="黄淮学院">黄淮学院</option>
+                              <option value="">...</option>
+                          </optgroup>
+                          <optgroup label="江苏">
+                              <option value="南京大学">南京大学</option>
+                              <option value="东南大学">东南大学</option>
+                              <option value="江南大学">江南大学</option>
+                              <option value="">...</option>
+                          </optgroup>
+                      </select>
+                  </p>
+                  <p>
+                      <span>学历类别：</span>
+                      <select name ="quaType"  class="input_text"  style="background: #FFFFFF;width: 230px; height: 45px" onfocus="this.className ='input_text input_text_focus'" >
+                          <option value="普招" selected hidden>学历类别</option>
+                          <option value="普招" >普招</option>
+                          <option value="成人" >成人</option>
+                      </select>
+                  </p>
+                  <p>
+                      <span>层次：</span>
+                      <select name ="level"  class="input_text"  style="background: #FFFFFF;width: 230px; height: 45px" onfocus="this.className ='input_text input_text_focus'" >
+                          <option value="专科" selected hidden>层次</option>
+                          <option value="专科" >专科</option>
+                          <option value="本科" >本科</option>
+                          <option value="研究生">研究生</option>
+                          <option value="博士生">博士生</option>
+                      </select>
+                  </p>
+                  <p>
+                      <span>毕(结)业：</span>
+                      <select name ="graduation"  class="input_text"  style="background: #FFFFFF;width: 230px; height: 45px" onfocus="this.className ='input_text input_text_focus'" >
+                          <option value="毕业" selected hidden>毕(结)业</option>
+                          <option value="毕业" >毕业</option>
+                          <option value="在读" >在读</option>
+                      </select>
+                  </p>
+              </div>
+              <div class="right">
+                  <p>
+                      <span>性别：</span>
+                      <select  type="text" name ="gender"  class="input_text"  style="background: #FFFFFF;width: 230px; height: 45px" onfocus="this.className ='input_text input_text_focus'" >
+                          <option value="男" selected hidden>性别</option>
+                          <option value="男" >男</option>
+                          <option value="女" >女</option>
+                      </select>
+                  </p>
+                  <p>
+                      <span>出生日期：</span>
+                      <span>
+                        <input id="todayTime1" type="date" name="birthDay" class="input_text"  style="background: #FFFFFF;width: 230px; height: 45px" onfocus="if(this.placeholder=='出生日期'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='出生日期';this.className ='input_text'}"  type="text" placeholder="出生日期" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span>身份证号：</span>
+                      <span>
+                        <input id="id" type="text" name="entityID" class="input_text" style="width: 230px; height: 45px"   onfocus="if(this.placeholder=='身份证号(大写字母或数字)'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='身份证号(大写字母或数字)';this.className ='input_text'}"  type="text" placeholder="身份证号(大写字母或数字)" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span>毕(结)业日期：</span>
+                      <span>
+                        <input id="todayTime2" type="date" name="graduationDate" class="input_text" style="width: 230px; height: 45px" onfocus="if(this.placeholder=='毕(结)业日期'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='毕(结)业日期';this.className ='input_text'}"  type="text" placeholder="毕(结)业日期" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span>专业：</span>
+                      <span>
+                        <input type="text" name="major" class="input_text" style="width: 230px; height: 45px" onkeyup="this.value=this.value.replace(/[^\u4e00-\u9fa5]/g,'')" onfocus="if(this.placeholder=='专业(中文)'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='专业(中文)';this.className ='input_text'}"  type="text" placeholder="专业(中文)" size="25" autocomplete="off">
+                      </span>
+                  </p>
+                  <p>
+                      <span>学习形式：</span>
+                      <select name ="mode"  class="input_text"  style="background: #FFFFFF;width: 230px; height: 45px" onfocus="this.className ='input_text input_text_focus'" >
+                          <option value="全日制" selected hidden>学习形式</option>
+                          <option value="全日制" >全日制</option>
+                          <option value="非全日制" >非全日制</option>
+                      </select>
+                  </p>
+                  <p>
+                      <span>学制：</span>
+                      <select name ="length"  class="input_text"  style="background: #FFFFFF;width: 230px; height: 45px" onfocus="this.className ='input_text input_text_focus'" >
+                          <option value="两年" selected hidden>学制</option>
+                          <option value="两年" >两年</option>
+                          <option value="四年" >四年</option>
+                          <option value="五年" >五年</option>
+                      </select>
+                  </p>
+                  <p>
+                      <span>证书编号：</span>
+                      <span>
+                        <input type="text" name="certNo" class="input_text" style="width: 230px; height: 45px" onkeyup="this.value=this.value.replace(/\D/g,'')" onfocus="if(this.placeholder=='证书编号(数字)'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='证书编号(数字)';this.className ='input_text'}"  type="text" placeholder="证书编号(数字)" size="25" autocomplete="off">
+                      </span>
+                  </p>
+              </div>
+
+            <div class="headImg">
+                <div class="uploadImg">
+                    <input type="file" name="" value="上传照片" id="file">
+                    +
+                    <!-- <img src="./images/head.jpg" alt=""> -->
+                    <img src="" alt="">
+                </div>
+                <p>上传照片(建议10M以内)</p>
+            </div>
+          </div>
+          <input type="hidden" name="photo" id="photo" value=""/>
+          <button type="button" name="button" class="btn">添加学历信息</button>
+        </form>
+    </div>
+    <!-- data-backdrop="false"去除遮罩层  -->
+    <div class="modal fade bd-example-modal-sm"  id="myModal" role="dialog" data-backdrop="false"  aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <p class="text-center mb-0" style="height:42px;line-height:42px;margin:0;">
+                    <i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
+                    请输入学历所必需的相关信息
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="/static/js/defaults-zh_CN.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var time = new Date();
+        var day = ("0" + time.getDate()).slice(-2);
+        var month = ("0" + (time.getMonth() + 1)).slice(-2);
+        var today = time.getFullYear() + "-" + (month) + "-" + (day);
+        $('#todayTime').val(today);
+        $('#todayTime1').val(today);
+        $('#todayTime2').val(today);
+    })
+
+    $(function() {
+        // 上传图片
+        $('#file').unbind('change').bind('change',function() {
+            event.stopPropagation();
+            uploadFile('img');
+            return;
+        });
+        // 头像图片
+        var artImg;
+        function uploadFile(type) {
+            event.stopPropagation();
+            let formData = new FormData();
+            if( type == "img"){
+                formData.append('file', $('#file')[0].files[0]);
+            }
+            $.ajax({
+                url: '/upload',
+                type: 'POST',
+                cache: false,
+                data: formData,
+                processData: false,
+                dataType: "json",
+                contentType: false
+            }).done(function (res) {
+                if (res.error == "0") {
+                    if( type == "img"){
+                        $('.uploadImg img').attr('src',res.result.path);
+                        $('#photo').val(res.result.path)
+                        return artImg = res.result.path;
+                    }
+                } else {
+                    alert("上传失败！" + res.result.msg)
+                }
+            }).fail(function (res) { });
+        }
+
+        var inputs = $('input[type="text"]');
+        // var value1 = $("#select1 option:selected").text()
+
+        // 提交按钮
+        $('.btn').click(function() {
+            // 如果为空报错提示
+            for (var i = 0; i < inputs.length; i++) {
+                if (!($(inputs[i]).val())) {
+                    $(inputs[i]).addClass('redColor');
+                    $('#myModal').modal('show');
+                    setTimeout(function(){
+                        $("#myModal").modal("hide");
+                    },2000);
+                    return;
+                }
+            }
+            // 成功后提交数据
+            // $(location).attr('href','index.html');
+            $("form[name='addForm']").submit()
+        })
+    })
+</script>
+</html>
